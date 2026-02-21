@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>关于我</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+<!-- 关于页标题（用专属类名） -->
+<h2 class="about-title">关于我</h2>
+
+<!-- 关于页容器（用专属类名） -->
+<div class="about-container">
+    <!-- 关于卡片（用专属类名） -->
+    <div class="about-card">
+        <h3>个人简介</h3>
+        <p>姓名：高锦涛</p>
+        <p>普普通通啊，大学里也没自己做过什么项目，基本都是些课程设计啥的。</p>
+		<p>怎么大学四年就剩最后一学期了，突发奇想做个主页。以后大概率也和程序员渐行渐远了，目前找的工作不是纯开发的（ecoflow，不知道有没有同僚？），写代码以后就是纯爱好了（好吧也没多爱）。</p>
+		<p>一直以来确实感觉过的有点平凡无聊（倒也不是多不满，主要是没有对比就没有伤害），好吧，默默下个决心，工作挣钱然后爽玩^_^</p>
+		<div class="avatar-wrapper">
+		    <img src="images/life/life.jpg" alt="生活照" class="life-photo" id="preview-img"> 
+		    <p class="photo-desc">一张近照</p> <!-- 可选：添加图片描述 -->
+		</div>
+	</div>
+    <div class="about-card">
+        <h3>联系方式</h3>
+        <div class="contact-line">
+            <span>邮箱</span>
+            <p>gjt221@qq.com</p>
+			<p>gaojiintao@gmail.com</p>
+        </div>
+        <div class="contact-line">
+            <span>GitHub</span>
+            <p>BAICI123.github.io</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+	<p class="footer-note">关于页</p>
+    © 2026 BAICI123
+</footer>
+
+<div id="img-modal" class="img-modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script src="js/music.js"></script>
+    <!-- 新增图片放大预览JS -->
+    <script>
+        // 获取元素
+        const modal = document.getElementById("img-modal");
+        const img = document.getElementById("preview-img");
+        const modalImg = document.getElementById("modal-img");
+        const closeBtn = document.getElementsByClassName("close-btn")[0];
+
+        // 点击图片打开弹窗
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src; // 同步图片地址
+            document.body.style.overflow = "hidden"; // 禁止背景滚动
+        }
+
+        // 点击关闭按钮/弹窗空白处关闭
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // 恢复滚动
+        }
+        modal.onclick = function(e) {
+            if (e.target === modal) { // 仅点击空白处关闭
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* ===== 全局基础配置 ===== */
+body {
+  margin: 0;
+  font-family: "Source Han Serif SC", "Noto Serif JP", serif;
+  background-color: #F9F7F4;
+  color: #5A5A58;
+  overflow-x: hidden;
+  line-height: 1.8;
+}
+
+/* ===== 页脚样式（所有页面共用） ===== */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  color: #8A9BA8;
+  font-size: 12px;
+  margin-top: 40px;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  border-top: 1px dashed #E8E6E2;
+}
+.footer-note {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* ===== 通用响应式基础配置 ===== */
+@media screen and (max-width: 768px) {
+  nav a {
+    margin: 0 12px;
+    font-size: 14px;
+  }
+}

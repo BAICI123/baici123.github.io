@@ -1,0 +1,214 @@
+/* ===== 关于页专属标题 ===== */
+.about-title {
+  width: fit-content;
+  margin: 40px auto 40px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Ma Shan Zheng", cursive; /* 手写体，区别于项目页 */
+  letter-spacing: 3px;
+  color: #5A5A58;
+  position: relative;
+  padding-left: 20px; /* 左侧竖线空间 */
+}
+/* 关于标题装饰：左侧竖线，区别于项目页 */
+.about-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #D49A6A; /* 暖柿色，关于页主强调色 */
+}
+
+/* ===== 关于页容器 ===== */
+.about-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  padding: 0 15px;
+}
+
+/* ===== 关于页信息卡片（手账风格） ===== */
+.about-card {
+  background-color: #F9F7F4;
+  border: 1px solid #E8E6E2;
+  border-radius: 4px; /* 更圆润的圆角，区别于项目页8px */
+  padding: 30px 25px;
+  margin-bottom: 25px;
+  position: relative;
+  /* 手账轻微倾斜效果 */
+  transform: rotate(-0.5deg);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(212, 154, 106, 0.05); /* 暖柿色浅阴影 */
+}
+/* 卡片悬浮：回正+暖色调阴影 */
+.about-card:hover {
+  transform: rotate(0);
+  box-shadow: 0 4px 12px rgba(212, 154, 106, 0.1);
+  border-color: #D49A6A;
+}
+
+/* 关于卡片标题 */
+.about-card h3 {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-family: "Noto Serif JP", serif; /* 日文字体，区别于项目页 */
+  color: #5A5A58;
+  letter-spacing: 1px;
+}
+
+/* 关于卡片内容 */
+.about-card p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #8A9BA8;
+  line-height: 1.8;
+  /* 手账文字间距 */
+  letter-spacing: 0.5px;
+}
+
+/* 生活照容器 */
+.avatar-wrapper {
+  margin: 25px 0 10px;
+  text-align: center; /* 图片居中 */
+}
+
+/* 生活照样式（手账照片风格） */
+.life-photo {
+  width: 180px; /* 固定宽度，避免过大 */
+  height: 180px; /* 正方形，可根据需求调整 */
+  object-fit: cover; /* 保持图片比例，裁剪多余部分 */
+  border-radius: 4px; /* 贴合卡片圆角风格 */
+  border: 3px solid #fff; /* 白色边框模拟拍立得 */
+  box-shadow: 0 3px 8px rgba(212, 154, 106, 0.15); /* 暖色调阴影 */
+  transform: rotate(0.8deg); /* 轻微旋转，贴合手账随意感 */
+  transition: all 0.3s ease;
+}
+
+/* 悬浮时图片效果 */
+.life-photo:hover {
+  transform: rotate(0) scale(1.05); /* 回正+轻微放大 */
+  box-shadow: 0 5px 15px rgba(212, 154, 106, 0.2);
+}
+
+/* 图片描述文字 */
+.photo-desc {
+  margin-top: 10px !important; /* 覆盖p标签默认样式 */
+  font-size: 12px !important;
+  color: #D49A6A !important; /* 暖柿色，和标题装饰色统一 */
+  font-style: italic; /* 斜体，更有手账感 */
+}
+
+/* 响应式适配（移动端调整图片大小） */
+@media screen and (max-width: 768px) {
+  .life-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* 联系方式行样式 */
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+.contact-line span {
+  color: #D49A6A; /* 暖柿色强调联系方式标签 */
+  font-weight: 500;
+  min-width: 60px;
+}
+
+/* ===== 关于页响应式适配 ===== */
+@media screen and (max-width: 768px) {
+  .about-title {
+    font-size: 18px;
+    margin: 40px auto 30px;
+    letter-spacing: 2px;
+  }
+  .about-container {
+    width: 90%;
+  }
+  .about-card {
+    padding: 25px 20px;
+    transform: rotate(-0.3deg);
+  }
+  .about-card h3 {
+    font-size: 16px;
+  }
+  .about-card p {
+    font-size: 13px;
+  }
+  .contact-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/* ===== 图片放大预览弹窗 ===== */
+.img-modal {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* 半透明黑背景 */
+  z-index: 9999; /* 置顶显示 */
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 关闭按钮 */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-btn:hover {
+  color: #D49A6A; /* 暖柿色，贴合页面风格 */
+}
+
+/* 预览图片 */
+.modal-content {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%; /* 最大宽度90%，适配屏幕 */
+  max-height: 90vh; /* 最大高度90%视口，避免溢出 */
+  border: 4px solid #fff; /* 白色边框，和小图呼应 */
+  border-radius: 4px;
+  animation: zoom 0.3s; /* 淡入放大动画 */
+}
+
+/* 放大动画 */
+@keyframes zoom {
+  from {transform: scale(0.1);}
+  to {transform: scale(1);}
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .close-btn {
+    font-size: 30px;
+    top: 15px;
+    right: 20px;
+  }
+  .modal-content {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+}
+
+/* 给小图添加点击提示（可选） */
+.life-photo {
+  cursor: zoom-in; /* 鼠标悬浮显示“放大”图标 */
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>项目</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+<!-- 项目页标题（用专属类名） -->
+<h2 class="projects-title">我的项目</h2>
+
+<!-- 项目卡片容器（用专属类名） -->
+<div class="projects-container">
+    <!-- 项目卡片1：增加时间、标签、装饰元素 -->
+    <div class="project-card">
+        <!-- 项目时间标签 -->
+        <div class="project-date">2026.01 - 还没做完</div>
+        <h3>毕业设计（烟丝成分质量占比检测）</h3>
+        <!-- 项目标签 -->
+        <div class="project-tags">
+            <span class="tag">机器学习</span>
+            <span class="tag">PyTorch</span>
+        </div>
+        <p>基于 CoAtNet 的单烟丝分类研究，探索cnn-transformer混合模型在细粒度图像分类中的效果。结合渐进式解冻训练方法提升模型精度。尝试优化算法。</p>
+        <div class="code-block">
+            PyTorch , CoAtNet , Progressive Unfreezing
+        </div>
+        <!-- 装饰性小元素 -->
+        <div class="card-decoration"></div>
+    </div>
+
+    <!-- 项目卡片2：增加时间、标签、装饰元素 -->
+    <div class="project-card">
+        <!-- 项目时间标签 -->
+        <div class="project-date">2025.12</div>
+        <h3>基于RT-Thread的物流工厂控制系统设计</h3>
+        <!-- 项目标签 -->
+        <div class="project-tags">
+            <span class="tag">RT-Thread</span>
+            <span class="tag">STM32F407</span>
+            <span class="tag">星火一号开发板</span>
+        </div>
+        <p>基于 STM32F407 主控与 RT-Thread 操作系统开发的物流工厂控制系统，
+		针对虚拟场景实现自动化协同作业。支持手动调试、关节精细控制、自动分类与示教复现四种模式，
+		通过 Modbus RTU 协议完成设备通信与状态交互，搭配 LCD 实现作业数据实时可视化。</p>
+        <div class="code-block">
+            C , RT-thread , Modbus RTU
+        </div>
+        <!-- 装饰性小元素 -->
+        <div class="card-decoration"></div>
+    </div>
+	
+	<!-- 项目卡片3：增加时间、标签、装饰元素 -->
+    <div class="project-card">
+        <!-- 项目时间标签 -->
+        <div class="project-date">2025.11 - 2025.12</div>
+        <h3>MIPS大端嵌入式Linux环境搭建与模块交互</h3>
+        <!-- 项目标签 -->
+        <div class="project-tags">
+            <span class="tag">操作系统编译部署</span>
+            <span class="tag">Linux</span>
+            <span class="tag">MIPS</span>
+        </div>
+        <p>搭建基于QEMU的MIPS大端架构嵌入式Linux仿真环境,
+		编译适配MIPS大端的Linux内核、BusyBox根文件系统,
+		开发并编译MIPS大端架构的内核模块（驱动）与用户态程序,
+		实现用户态程序与内核模块的读写交互，验证整个环境的可用性。</p>
+        <div class="code-block">
+            C , Linux
+        </div>
+        <!-- 装饰性小元素 -->
+        <div class="card-decoration"></div>
+    </div>
+	
+	<!-- 项目卡片4：增加时间、标签、装饰元素 -->
+    <div class="project-card">
+        <!-- 项目时间标签 -->
+        <div class="project-date">2025.3 - 2025.5</div>
+        <h3>基于C++的词法分析程序和语法分析程序</h3>
+        <!-- 项目标签 -->
+        <div class="project-tags">
+            <span class="tag">编译原理</span>
+            <span class="tag">词法分析</span>
+            <span class="tag">语法分析</span>
+        </div>
+        <p>实现支持科学计数法、复数的词法分析器与无歧义语法分析器。
+		词法分析：设计正规文法覆盖科学计数法、复数等常量，通过C++实现NFA→DFA转换，Token识别准确率100%；
+		语法分析：采用LL1算法计算First/Follow集，解决左递归与二义性问题，生成正确抽象语法树（AST），项目中LR1算法存在部分问题。
+		</p>
+        <div class="code-block">
+            C++ , 编译原理 , 数据结构
+        </div>
+        <!-- 装饰性小元素 -->
+        <div class="card-decoration"></div>
+    </div>
+	
+	<!-- 项目卡片5：增加时间、标签、装饰元素 -->
+    <div class="project-card">
+        <!-- 项目时间标签 -->
+        <div class="project-date">2025.3 - 2025.5</div>
+        <h3>医疗急救微信小程序</h3>
+        <!-- 项目标签 -->
+        <div class="project-tags">
+            <span class="tag">用户调研</span>
+			<span class="tag">需求设计</span>
+            <span class="tag">微信小程序</span>
+        </div>
+        <p>调研30+用户编辑需求文档，明确"急救步骤可视化"与"AED快速定位"核心功能；
+		开发急救知识页（图片+视频预加载）与AED地图页（接入腾讯地图API）；
+		覆盖多类急救场景，收录校内AED点位。
+		</p>
+        <div class="code-block">
+            前端开发 , 软件设计流程 , 文档编写
+        </div>
+        <!-- 装饰性小元素 -->
+        <div class="card-decoration"></div>
+    </div>
+</div>
+
+<footer>
+	<p class="footer-note">项目页</p>
+    © BAICI123
+</footer>
+
+<script src="js/music.js"></script>
+
+</body>
+</html>

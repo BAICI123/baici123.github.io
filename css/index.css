@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ===== 导航样式 ===== */
+/* 补充到 nav 样式后 */
+nav {
+  text-align: center;
+  padding: 25px 0;
+  position: relative;
+  margin: 0 20px;
+  /* 新增：明确导航栏高度，方便iframe计算 */
+  height: auto;
+  box-sizing: border-box;
+}
+nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #E8E6E2;
+}
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #8A9BA8;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+nav a:hover {
+  color: #B4C7B9;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #B4C7B9;
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== 音乐播放器样式 ===== */
+.music-player {
+  position: fixed;
+  top: 20px; /* 与导航栏顶部对齐 */
+  right: 30px; /* 远离页面边缘 */
+  width: 60px; /* 缩小适配导航栏 */
+  height: 60px;
+  z-index: 9999; /* 保证层级最高，跨页面不被遮挡 */
+  cursor: pointer;
+  /* 适配小屏幕 */
+  @media screen and (max-width: 768px) {
+	width: 50px;
+	height: 50px;
+	right: 15px;
+	top: 15px;
+  }
+}
+/* 唱片样式 - 贴合日系风格 */
+.record {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #8A9BA8; /* 与页面配色统一 */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+/* 唱片纹理 - 简化更贴合日系极简风 */
+.record::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #F9F7F4 8px, transparent 8px),
+			  repeating-radial-gradient(circle at center, #8A9BA8 0, #8A9BA8 1px, #B4C7B9 1px, #B4C7B9 2px);
+  @media screen and (max-width: 768px) {
+	background: radial-gradient(circle at center, #F9F7F4 6px, transparent 6px),
+				repeating-radial-gradient(circle at center, #8A9BA8 0, #8A9BA8 1px, #B4C7B9 1px, #B4C7B9 2px);
+  }
+}
+/* 唱片旋转动画 */
+.record.rotate {
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 唱针样式 - 缩小适配唱片 */
+.tonearm {
+  position: absolute;
+  top: -8px;
+  right: 25px; /* 适配60px宽唱片 */
+  width: 30px;
+  height: 45px;
+  background: #5A5A58; /* 页面文字色 */
+  border-radius: 15px 15px 0 0;
+  transform-origin: top right;
+  transition: transform 0.3s ease;
+  z-index: 10000;
+  @media screen and (max-width: 768px) {
+	top: -6px;
+	right: 20px;
+	width: 25px;
+	height: 35px;
+  }
+}
+/* 唱针针头 */
+.tonearm::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  width: 6px;
+  height: 10px;
+  background: #D49A6A; /* 暖柿色，贴合页面 accent 色 */
+  border-radius: 3px;
+  @media screen and (max-width: 768px) {
+	width: 5px;
+	height: 8px;
+  }
+}
+/* 唱针抬起状态（暂停） */
+.tonearm.lifted {
+  transform: rotate(30deg);
+}
+
+/* ========== iframe 样式（修复高度） ========== */
+#content-iframe {
+  width: 100%;
+  /* 核心：基于视口高度，减去导航栏实际占用高度 + 小屏幕适配 */
+  height: calc(100vh - 80px); 
+  /* 兜底：避免高度溢出/不足 */
+  min-height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
+  border: none;
+  margin: 0;
+  display: block;
+  /* 防止iframe内部滚动影响外层 */
+  overflow: hidden;
+}
+
+/* 小屏幕适配（768px以下） */
+@media screen and (max-width: 768px) {
+  #content-iframe {
+    /* 小屏幕导航栏文字更小，高度略减 */
+    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 70px);
+  }
+}

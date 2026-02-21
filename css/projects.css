@@ -1,0 +1,174 @@
+/* ===== 项目页专属标题 ===== */
+.projects-title {
+  width: fit-content;
+  margin: 40px auto 40px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "M PLUS Rounded 1c", "Source Han Sans Soft", sans-serif;
+  letter-spacing: 2px;
+  color: #5A5A58;
+  position: relative;
+  padding-bottom: 8px;
+}
+.projects-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: #B4C7B9;
+}
+
+/* ===== 项目卡片容器 ===== */
+.projects-container {
+  width: 85%;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 15px;
+}
+
+/* ===== 项目卡片（核心修改：顶部内边距） ===== */
+.project-card {
+  background-color: #F9F7F4;
+  border: 1px solid #E8E6E2;
+  border-radius: 8px;
+  padding: 40px 20px 25px; /* 顶部内边距从25px改为40px */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(180, 199, 185, 0.1);
+  border-color: #B4C7B9;
+}
+
+/* ===== 项目时间标签（优化定位+防遮挡） ===== */
+.project-date {
+  position: absolute;
+  top: 15px; /* 上移5px，远离标题 */
+  right: 20px;
+  font-size: 11px;
+  color: #B4C7B9;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  letter-spacing: 0.5px;
+  z-index: 1; /* 确保在标题上层 */
+  background-color: rgba(249, 247, 244, 0.8); /* 半透明背景 */
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+/* ===== 项目标签容器 ===== */
+.project-tags {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 12px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  background-color: rgba(180, 199, 185, 0.15);
+  color: #7A8C81;
+  border-radius: 12px;
+  border: 1px solid rgba(180, 199, 185, 0.2);
+}
+
+/* ===== 项目卡片标题（核心优化：换行+最大宽度） ===== */
+.project-card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: #5A5A58;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #E8E6E2;
+  max-width: calc(100% - 80px); /* 预留右侧80px给时间 */
+  word-wrap: break-word; /* 超长标题自动换行 */
+  line-height: 1.4; /* 优化行高，换行后更美观 */
+}
+
+/* 项目卡片描述 */
+.project-card p {
+  margin: 12px 0 18px;
+  font-size: 14px;
+  color: #8A9BA8;
+  line-height: 1.7;
+}
+
+/* 项目卡片代码块 */
+.code-block {
+  background-color: rgba(180, 199, 185, 0.08);
+  border-radius: 4px;
+  padding: 12px 15px;
+  font-size: 13px;
+  color: #5A5A58;
+  font-family: "Source Han Serif SC", serif;
+  border-left: 2px solid #B4C7B9;
+  line-height: 1.6;
+}
+
+/* 卡片装饰元素 */
+.card-decoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(180, 199, 185, 0.05);
+  border-radius: 50%;
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+.project-card:hover .card-decoration {
+  transform: scale(1.2);
+  background-color: rgba(180, 199, 185, 0.08);
+}
+
+/* ===== 响应式适配（同步调整移动端） ===== */
+@media screen and (max-width: 768px) {
+  .projects-title {
+    font-size: 18px;
+    margin: 40px auto 30px;
+  }
+  .projects-container {
+    width: 90%;
+    gap: 20px;
+  }
+  .project-card {
+    padding: 35px 15px 20px; /* 移动端顶部内边距同步调整 */
+  }
+  .project-date {
+    font-size: 10px;
+    top: 12px;
+    right: 15px;
+    padding: 1px 3px;
+  }
+  .project-card h3 {
+    font-size: 15px;
+    max-width: calc(100% - 70px); /* 移动端预留宽度稍小 */
+  }
+  .tag {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  .project-card p {
+    font-size: 13px;
+  }
+  .code-block {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+  .card-decoration {
+    width: 50px;
+    height: 50px;
+    bottom: -15px;
+    right: -15px;
+  }
+}

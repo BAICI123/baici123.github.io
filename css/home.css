@@ -1,0 +1,232 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ===== 首页装饰背景块 ===== */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background: rgba(180, 199, 185, 0.1);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23b4c7b9' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* ===== 首页主体容器（头像/标题） ===== */
+.container {
+  width: 85%;
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 0 15px;
+}
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid #F9F7F4;
+  outline: 1px solid #B4C7B9;
+  box-shadow: none;
+}
+.main-title {
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 22px;
+  font-family: "M PLUS Rounded 1c", "Source Han Sans Soft", sans-serif;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 8px;
+}
+.main-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 1px;
+  background-color: #D49A6A;
+}
+.subtitle {
+  color: #8A9BA8;
+  margin-top: 10px;
+  font-size: 13px;
+  font-family: "Ma Shan Zheng", cursive;
+  letter-spacing: 1px;
+}
+
+/* ===== 首页游戏容器 ===== */
+.game-wrap {
+  width: 100%;
+  margin: 10px auto;
+  background-color: #E8E6E2;
+  padding: 15px 0;
+  border-top: 1px dashed #E8E6E2;
+  border-bottom: 1px dashed #E8E6E2;
+}
+.game-container {
+  width: calc(90% - 30px);
+  max-width: 700px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: #F9F7F4;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e8e6e2' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+  cursor: pointer;
+  touch-action: manipulation;
+  border-radius: 0;
+  box-shadow: 0 0 2px rgba(0,0,0,0.02);
+}
+#pillar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#start-tip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #8A9BA8;
+  font-size: 16px;
+  z-index: 10;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  #start-tip {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 14px;
+  }
+}
+#score {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 14px;
+  color: #8A9BA8;
+  z-index: 9;
+  font-weight: 500;
+}
+
+/* 强制猫咪层级最高，柱体次之，柱子最低 */
+.pillar-cat {
+  z-index: 10 !important; 
+  pointer-events: none; /* 不影响碰撞检测 */
+}
+.pillar-cylinder {
+  z-index: 9 !important;
+  pointer-events: none;
+}
+.pillar {
+  z-index: 7 !important;
+}
+
+/* 修复小屏幕下装饰元素适配 */
+@media screen and (max-width: 768px) {
+  .pillar-cat {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .pillar-cylinder {
+    width: 30px !important;
+    height: 100px !important;
+  }
+}
+
+/* 飞机样式 */
+#plane {
+  position: absolute;
+  bottom: 50%;
+  left: 50px;
+  z-index: 8;
+  transform: none;
+  /*测试纯色：淡墨蓝底 + 暖柿色描边*/
+  background-color: #8a9ba8 !important;
+  border: 1px solid #d49a6a !important;
+  border-radius: 50% 50% 4px 4px;
+  transition: none;
+}
+
+/* 柱子样式 */
+.pillar {
+  position: absolute;
+  /* 测试纯色：浅杉绿 */
+  background-color: #B4C7B9 !important;
+  border: none !important;
+  border-radius: 0;
+  z-index: 7;
+}
+.pillar-top {
+  top: 0;
+}
+.pillar-bottom {
+  bottom: 0;
+}
+/* 保留细线，贴合日系手账风格 */
+.pillar-top::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #8A9BA8;
+  z-index: 9;
+}
+.pillar-bottom::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #8A9BA8;
+  z-index: 9;
+}
+
+#crash-tip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #D49A6A;
+  font-size: 18px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#crash-tip.show {
+  opacity: 1;
+}
+
+/* 首页游戏响应式适配 */
+@media screen and (max-width: 768px) {
+  .game-container {
+    height: 220px;
+  }
+  #plane {
+    left: 30px;
+  }
+  #score {
+    font-size: 12px;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+  .main-title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 12px;
+  }
+}

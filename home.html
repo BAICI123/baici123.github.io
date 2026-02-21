@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主页记录</title>
+  <!-- 引入基础样式 + 首页专属样式 -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <!-- 引入日系字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=M+PLUS+Rounded+1c:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Source+Han+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 主体内容 -->
+  <div class="hero-bg"></div>
+  <div class="container">
+    <img src="images/avatar.jpg" alt="头像" class="avatar">
+    <h1 class="main-title">小高</h1>
+    <p class="subtitle">个人主页 / 随便搞搞</p>
+  </div>
+
+  <!-- 游戏容器 -->
+  <div class="game-wrap">
+    <div id="plane-game" class="game-container">
+      <div id="start-tip">点击/按空格开始游戏(页面右上bgm)</div>
+      <div id="score">得分・0</div>
+      <div id="plane"></div>
+      <div id="pillar-container"></div>
+      <div id="crash-tip">碰撞啦 ✿</div>
+    </div>
+  </div>
+  
+  <footer>
+	<p class="footer-note">首页</p>
+    © BAICI123
+</footer>
+  
+  <script src="js/game.js"></script>
+</body>
+</html>

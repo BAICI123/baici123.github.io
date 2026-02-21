@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>BICI123的主页</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav>
+        <!-- 调整 data-page 为 home.html -->
+        <a href="home.html" class="nav-link active" data-page="home.html">首页</a>
+        <a href="projects.html" class="nav-link" data-page="projects.html">项目</a>
+        <a href="about.html" class="nav-link" data-page="about.html">关于我</a>
+    </nav>
+
+    <div class="music-player">
+        <div class="record"></div>
+        <div class="tonearm"></div>
+        <audio id="bg-music" loop preload="auto">
+            <source src="music/background.mp3" type="audio/mpeg">
+            你的浏览器不支持音频播放
+        </audio>
+    </div>
+
+    <!-- iframe 初始加载 home.html -->
+    <iframe id="content-iframe" src="home.html"></iframe>
+
+    <script src="js/music.js"></script>
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const iframe = document.getElementById('content-iframe');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                iframe.src = page;
+                // 高亮当前导航
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
